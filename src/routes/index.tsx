@@ -695,7 +695,9 @@ function Pricing() {
               Get Instant Access <ArrowRight className="size-4" />
             </motion.a>
           </motion.div>
-
+<p className="mt-2 flex items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
+   Secure your access now.
+</p>
           {/* Lifetime card */}
           <div
             className="relative flex h-full flex-col rounded-[22px] border p-5 backdrop-blur"
