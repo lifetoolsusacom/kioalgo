@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -131,29 +132,6 @@ const ours = [
   "Any market, any timeframe — crypto, forex, stocks",
   "VIP Discord — Members share their best setups for every asset, every day.",
   "24/7 live chat + setup video guides included forever",
-];
-
-const monthlyFeatures = [
-  "Full RAPID3 indicator access",
-  "Real-time BUY/SELL signals",
-  "Auto TP/SL — 1:1 & 1:2 + split mode",
-  "Smart Trail — automatic profit lock",
-  "Trend Cloud + reversal zones",
-  "Built-in backtest table",
-  "MTF panel — 6 timeframes",
-  "15 real-time TradingView alerts",
-  "Private member community",
-  "Setup & strategy video guides",
-  "24/7 live chat support",
-  "All future updates included",
-];
-
-const lifetimeExtras = [
-  "Locked in forever — founding member pricing",
-  "All future RAPID3 tools free for life",
-  "Beta access to every new version first",
-  "Direct input on the feature roadmap",
-  "Founding member status — permanent",
 ];
 
 const faqs = [
@@ -488,85 +466,265 @@ function Compare() {
 }
 
 function Pricing() {
-  const [annual, setAnnual] = useState(false);
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
+  const isAnnual = billingPeriod === "annual";
+
+  const planFeatures = [
+    "Full RAPID3 indicator access",
+    "Real-time BUY/SELL signals",
+    "Auto TP/SL — 1:1 & 1:1.5 + Customization options",
+    "Trend Cloud + Reversal Zones",
+    "Built-in results table",
+    "MTF Panel — 12 timeframes",
+    "Real-time TradingView alerts",
+    "VIP Discord community",
+    "Setup & strategy video guides",
+    "24/7 live chat support",
+    "All future updates included",
+  ];
+
+  const lifetimePerks = [
+    "Locked at $439 forever — last Founding Members pricing",
+    "All future KioAlgo indicators — free forever",
+    "Beta access to every new version first",
+    "Direct input on future features",
+    "Founding Member status — forever",
+  ];
+
+  const accent = isAnnual
+    ? {
+        label: "#FF4040",
+        border: "#FF2B2B",
+        glow: "rgba(255,43,43,0.35)",
+        priceFrom: "#FF3B3B",
+        priceTo: "#FF9D9D",
+        button: "linear-gradient(135deg, #FF2B2B, #FF5757)",
+        buttonGlow: "0 8px 32px -8px rgba(255,43,43,0.55)",
+        check: "#FF4040",
+      }
+    : {
+        label: "#1769FF",
+        border: "#1769FF",
+        glow: "rgba(23,105,255,0.35)",
+        priceFrom: "#1769FF",
+        priceTo: "#9DC2FF",
+        button: "linear-gradient(135deg, #1769FF, #3B8CFF)",
+        buttonGlow: "0 8px 32px -8px rgba(23,105,255,0.55)",
+        check: "#1769FF",
+      };
+
   return (
     <section id="pricing" className="relative py-24">
       <div className="hero-glow pointer-events-none absolute inset-0 opacity-30" />
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHeading eyebrow="PRICING" title="Choose your plan" sub="Cancel any time." />
-        <div className="mx-auto mt-8 flex w-fit items-center gap-1 rounded-full border border-border bg-surface p-1 text-sm font-semibold">
-          <button
-            onClick={() => setAnnual(false)}
-            className={`rounded-full px-4 py-1.5 transition-colors ${!annual ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+
+        <div className="mx-auto mt-10 flex w-fit items-center gap-3 rounded-full border border-border bg-surface/80 px-4 py-2.5 backdrop-blur">
+          <span
+            className="text-sm font-bold transition-colors duration-300"
+            style={{ color: isAnnual ? "var(--muted-foreground)" : "var(--foreground)" }}
           >
             Monthly
-          </button>
+          </span>
+
           <button
-            onClick={() => setAnnual(true)}
-            className={`rounded-full px-4 py-1.5 transition-colors ${annual ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+            type="button"
+            role="switch"
+            aria-checked={isAnnual}
+            onClick={() => setBillingPeriod(isAnnual ? "monthly" : "annual")}
+            className="relative h-8 w-[60px] shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            style={{
+              backgroundColor: isAnnual ? "rgba(255, 43, 43, 0.18)" : "rgba(23, 105, 255, 0.18)",
+              boxShadow: isAnnual
+                ? "0 0 18px rgba(255, 43, 43, 0.35), inset 0 0 0 1px rgba(255, 43, 43, 0.4)"
+                : "0 0 18px rgba(23, 105, 255, 0.35), inset 0 0 0 1px rgba(23, 105, 255, 0.4)",
+              transition: "background-color 350ms ease-in-out, box-shadow 350ms ease-in-out",
+            }}
           >
-            Annual <span className="text-green-bright">save $180</span>
+            <motion.span
+              className="absolute top-1 left-1 size-6 rounded-full"
+              animate={{
+                x: isAnnual ? 28 : 0,
+                background: isAnnual
+                  ? "linear-gradient(135deg, #FF2B2B, #FF6B6B)"
+                  : "linear-gradient(135deg, #1769FF, #5B9CFF)",
+                boxShadow: isAnnual
+                  ? "0 0 12px rgba(255,43,43,0.7)"
+                  : "0 0 12px rgba(23,105,255,0.7)",
+              }}
+              whileTap={{ scale: 0.85 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+            />
           </button>
+
+          <span
+            className="text-sm font-bold transition-colors duration-300"
+            style={{ color: isAnnual ? "#FF4040" : "var(--muted-foreground)" }}
+          >
+            Annual
+          </span>
+
+          <span className="rounded-full bg-green/25 px-3 py-1 text-xs font-bold text-green-bright">
+            SAVE $300
+          </span>
         </div>
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          <div className="rounded-3xl border border-border bg-surface/80 p-8">
-            <p className="text-xs font-bold tracking-widest text-muted-foreground">
-              {annual ? "ANNUAL" : "MONTHLY"}
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">Cancel any time.</p>
-            <p className="mt-6 font-display text-5xl font-extrabold">
-              {annual ? "$419" : "$49"}
-              <span className="text-base font-semibold text-muted-foreground">
-                {annual ? "/year" : "/month"}
-              </span>
-            </p>
-            <a
+
+        <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-2">
+          {/* Monthly / Annual card */}
+          <motion.div
+            className="relative flex flex-col rounded-[28px] border p-8 backdrop-blur"
+            animate={{
+              borderColor: accent.border,
+              boxShadow: `0 0 40px -12px ${accent.glow}`,
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            style={{ backgroundColor: "#0b0a12" }}
+          >
+            <div className="flex flex-1 flex-col">
+              <div className="flex items-center gap-2 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={isAnnual ? "annual-label" : "monthly-label"}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="text-xs font-extrabold tracking-widest"
+                    style={{ color: accent.label }}
+                  >
+                    {isAnnual ? "ANNUAL" : "MONTHLY"}
+                  </motion.span>
+                </AnimatePresence>
+                <AnimatePresence>
+                  {isAnnual && (
+                    <motion.span
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="rounded-full bg-[#FF6B00]/15 px-2 py-0.5 text-[10px] font-bold tracking-wide text-[#FF9142]"
+                    >
+                      MOST POPULAR
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">Cancel any time.</p>
+
+              <div className="relative mt-6 min-h-[96px] overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={isAnnual ? "annual-price" : "monthly-price"}
+                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  >
+                    <p
+                      className="bg-clip-text text-[64px] font-extrabold leading-none text-transparent sm:text-[80px]"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, ${accent.priceFrom}, ${accent.priceTo})`,
+                      }}
+                    >
+                      {isAnnual ? "$24.92" : "$49.99"}
+                    </p>
+                    <p className="mt-1 text-sm font-bold text-muted-foreground">
+                      /month
+                      {isAnnual && (
+                        <span className="ml-2 text-[#FF6B6B]">$299 billed annually</span>
+                      )}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              <p className="mt-8 text-xs font-bold tracking-widest text-muted-foreground">
+                EVERYTHING INCLUDED
+              </p>
+              <ul className="mt-4 space-y-3">
+                {planFeatures.map((f) => (
+                  <li key={f} className="flex gap-3 text-sm font-medium text-foreground/90">
+                    <motion.span animate={{ color: accent.check }} transition={{ duration: 0.4 }}>
+                      <Check className="mt-0.5 size-4 shrink-0" />
+                    </motion.span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <motion.a
               href="#top"
-              className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground transition-transform hover:scale-[1.02]"
+              className="mt-8 flex h-[60px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white"
+              animate={{ background: accent.button, boxShadow: accent.buttonGlow }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              whileHover={{ scale: 1.01 }}
             >
-              Get instant access <ArrowRight className="size-4" />
-            </a>
-            <p className="mt-8 text-xs font-bold tracking-widest text-muted-foreground">
-              EVERYTHING INCLUDED
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {monthlyFeatures.map((f) => (
-                <li key={f} className="flex gap-3 text-sm">
-                  <Check className="mt-0.5 size-4 shrink-0 text-green-bright" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative rounded-3xl border border-blue-bright/40 bg-surface-2/70 p-8 shadow-[var(--shadow-glow-blue)]">
-            <span className="absolute -top-3 left-8 rounded-full bg-blue-bright px-3 py-1 text-xs font-bold text-background">
+              Get Instant Access <ArrowRight className="size-4" />
+            </motion.a>
+          </motion.div>
+
+          {/* Lifetime card */}
+          <div
+            className="relative flex flex-col rounded-[28px] border p-8 backdrop-blur"
+            style={{
+              backgroundColor: "#0b0a12",
+              borderColor: "#8B2CFF",
+              boxShadow: "0 0 40px -12px rgba(139,44,255,0.4)",
+            }}
+          >
+            <span className="absolute -top-3 left-8 rounded-full bg-[#8B2CFF] px-3 py-1 text-xs font-bold text-white">
               BEST VALUE
             </span>
-            <p className="text-xs font-bold tracking-widest text-muted-foreground">LIFETIME</p>
-            <p className="mt-2 text-sm text-muted-foreground">Own it forever. No renewals.</p>
-            <p className="mt-6 font-display text-5xl font-extrabold">
-              $439
-              <span className="text-base font-semibold text-muted-foreground">one-time</span>
-            </p>
+            <div className="flex flex-1 flex-col">
+              <p className="text-xs font-extrabold tracking-widest text-[#B98CFF]">LIFETIME</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Own It Forever. No Renewals Ever.
+              </p>
+              <p
+                className="mt-6 bg-clip-text text-[64px] font-extrabold leading-none text-transparent sm:text-[80px]"
+                style={{ backgroundImage: "linear-gradient(135deg, #F3E8FF, #8B2CFF)" }}
+              >
+                $439
+              </p>
+              <p className="mt-1 text-sm font-bold text-muted-foreground">one-time payment</p>
+
+              <p className="mt-8 text-xs font-bold tracking-widest text-muted-foreground">
+                EVERYTHING INCLUDED, PLUS
+              </p>
+              <ul className="mt-4 space-y-3">
+                {planFeatures.map((f) => (
+                  <li key={f} className="flex gap-3 text-sm font-medium text-foreground/90">
+                    <Check className="mt-0.5 size-4 shrink-0 text-[#B98CFF]" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6 border-t border-border/60 pt-6">
+                <ul className="space-y-2.5">
+                  {lifetimePerks.map((p) => (
+                    <li key={p} className="flex gap-2.5 text-sm text-foreground/90">
+                      <Zap className="mt-0.5 size-4 shrink-0 text-yellow-400" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
             <a
               href="#top"
-              className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 font-bold text-background transition-transform hover:scale-[1.02]"
+              className="mt-8 flex h-[60px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white transition-transform duration-300 hover:scale-[1.01]"
+              style={{
+                background: "linear-gradient(135deg, #8B2CFF, #B266FF)",
+                boxShadow: "0 8px 32px -8px rgba(139,44,255,0.6)",
+              }}
             >
-              Get lifetime access <ArrowRight className="size-4" />
+              Get Lifetime Access <ArrowRight className="size-4" />
             </a>
-            <p className="mt-8 text-xs font-bold tracking-widest text-muted-foreground">
-              EVERYTHING INCLUDED, PLUS
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {lifetimeExtras.map((f) => (
-                <li key={f} className="flex gap-3 text-sm">
-                  <Check className="mt-0.5 size-4 shrink-0 text-blue-bright" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-xs text-muted-foreground">
-              Only 8 founding spots at this price.
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs font-semibold text-amber-400">
+              ⚠️ Only 1 of 8 Founding spots remaining
             </p>
           </div>
         </div>
