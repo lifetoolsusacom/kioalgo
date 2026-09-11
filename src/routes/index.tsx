@@ -945,41 +945,41 @@ function Footer() {
   ];
 
   return (
-    <footer className="border-t border-[#1c2230] bg-[#0a0b10]">
-      <div className="mx-auto max-w-6xl px-5 pt-16 pb-10">
-        <div className="grid gap-12 border-b border-[#1c2230] pb-12 md:grid-cols-[minmax(0,1.5fr)_minmax(0,0.75fr)_minmax(0,0.75fr)]">
-          <div>
-            <a href="#top" className="inline-flex items-center gap-2">
-              <span className="grid size-9 place-items-center rounded-lg bg-primary/15 ring-1 ring-primary/35">
-                <Zap className="size-4 text-green-bright" />
-              </span>
-              <span className="font-display text-2xl font-extrabold tracking-tight text-white">
-                RAPID3™
-              </span>
-            </a>
+    <footer className="border-t border-border bg-ink">
+      <div className="mx-auto max-w-5xl px-5 py-12 text-center">
+        <div className="flex flex-col items-center">
+          <a href="#top" className="inline-flex items-center gap-2">
+            <span className="grid size-8 place-items-center rounded-lg bg-primary/20 ring-1 ring-primary/40">
+              <Zap className="size-4 text-green-bright" />
+            </span>
+            <span className="font-display text-xl font-extrabold tracking-tight text-foreground">
+              RAPID3™
+            </span>
+          </a>
 
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-[#a0a5b5]">
-              AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
-            </p>
+          <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted-foreground">
+            AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
+          </p>
 
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#0066ff]/25 bg-[#0066ff]/10 px-3 py-2">
-              <span className="grid size-5 place-items-center rounded-md bg-[#0066ff]">
-                <span className="size-2 rounded-sm bg-white" />
-              </span>
-              <span className="text-xs font-semibold text-[#c6dcff]">
-                Powered by <span className="font-bold text-white">KioAlgo</span>
-              </span>
-            </div>
+          <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/50 px-3 py-1.5">
+            <span className="grid size-4 place-items-center rounded bg-primary/20 ring-1 ring-primary/35">
+              <span className="size-1.5 rounded-sm bg-green-bright" />
+            </span>
+            <span className="text-[10px] font-semibold text-muted-foreground">
+              Powered by <span className="font-bold text-foreground">KioAlgo</span>
+            </span>
           </div>
+        </div>
 
+        <div className="mt-9 flex flex-col items-center gap-7 border-y border-border py-7 sm:flex-row sm:justify-center sm:gap-14">
           <div>
-            <h3 className="text-sm font-bold text-white">Navigation</h3>
-            <nav className="mt-5 flex flex-col items-start gap-3">
+            <h3 className="text-xs font-bold text-foreground">Navigation</h3>
+            <nav className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2">
               {navigation.map(([label, href]) => (
                 <a
                   key={href}
                   href={href}
-                  className="text-sm text-[#a0a5b5] transition-colors hover:text-[#0066ff]"
+                  className="text-[11px] text-muted-foreground transition-colors hover:text-green-bright"
                 >
                   {label}
                 </a>
@@ -988,13 +988,13 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-white">Socials</h3>
-            <nav className="mt-5 flex flex-col items-start gap-3">
+            <h3 className="text-xs font-bold text-foreground">Socials</h3>
+            <nav className="mt-3 flex justify-center gap-4">
               {socials.map(([label, href]) => (
                 <a
                   key={label}
                   href={href}
-                  className="text-sm text-[#a0a5b5] transition-colors hover:text-[#0066ff]"
+                  className="text-[11px] text-muted-foreground transition-colors hover:text-green-bright"
                 >
                   {label}
                 </a>
@@ -1003,14 +1003,14 @@ function Footer() {
           </div>
         </div>
 
-        <div className="pt-10 text-center">
-          <p className="text-xs text-[#555a68]">
+        <div className="mt-8">
+          <p className="text-[10px] text-muted-foreground/70">
             © 2026 KioAlgo. All Rights Reserved. · Built for TradingView · Available worldwide
           </p>
 
-          <div className="mx-auto mt-8 max-w-5xl space-y-4 text-left text-[11px] leading-relaxed text-[#555a68] sm:text-xs">
+          <div className="mx-auto mt-6 max-w-4xl space-y-3 text-center text-[10px] leading-relaxed text-muted-foreground/70 sm:text-[11px]">
             <p>
-              <span className="font-semibold text-[#707788]">Risk Disclaimer:</span> Trading
+              <span className="font-semibold text-muted-foreground">Risk Disclaimer:</span> Trading
               financial instruments — including forex, cryptocurrency, stocks, futures, and indices
               — carries a significant risk of loss and is not suitable for all investors. The
               majority of retail traders lose money. You should carefully consider your financial
@@ -1048,7 +1048,7 @@ function Footer() {
                 href="https://www.tradingview.com"
                 target="_blank"
                 rel="noreferrer"
-                className="font-medium text-[#707788] underline decoration-[#0066ff]/40 underline-offset-2 transition-colors hover:text-[#0066ff]"
+                className="font-medium text-muted-foreground underline decoration-primary/60 underline-offset-2 transition-colors hover:text-green-bright"
               >
                 TradingView®
               </a>
@@ -1057,31 +1057,12 @@ function Footer() {
               TradingView® has no affiliation with KioAlgo or the services described herein.
             </p>
 
-            <p className="pt-1 text-center text-xs font-semibold text-[#707788]">
+            <p className="pt-1 text-[10px] font-semibold text-muted-foreground sm:text-[11px]">
               Always trade responsibly. Never risk capital you cannot afford to lose.
             </p>
           </div>
         </div>
       </div>
     </footer>
-  );
-}
-
-function Index() {
-  return (
-    <div className="min-h-screen bg-background">
-      <Nav />
-      <main>
-        <Hero />
-        <Marquee />
-        <Features />
-        <How />
-        <Compare />
-        <Pricing />
-        <Faq />
-        <FinalCta />
-      </main>
-      <Footer />
-    </div>
   );
 }
