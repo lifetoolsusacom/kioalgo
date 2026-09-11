@@ -955,11 +955,10 @@ function Footer() {
                 <img
                   src={rapid3Logo}
                   alt="RAPID3"
-                  className="h-8 w-auto object-contain"
+                  className="h-10 w-auto object-contain"
                   loading="lazy"
-              />
+                />
             </a>
-
             <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted-foreground md:max-w-xs">
               Powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
             </p>
