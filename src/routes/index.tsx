@@ -78,35 +78,35 @@ const features = [
   {
     icon: BellRing,
     title: "Never miss a move again",
-    body: "15 real-time alerts fire the moment a setup appears. You don't watch the chart — RAPID3 watches it for you.",
+    body: "Add alerts to entries and receive notifications as soon as a new setup is identified—without having to spend the day monitoring the chart.",
   },
   {
     icon: Layers,
     title: "See the bigger picture instantly",
-    body: "The multi-timeframe panel shows trend direction across six timeframes at once, so you trade with the trend.",
+    body: "The multi-timeframe panel shows trend direction across twelve timeframes at once, so you trade with the trend.",
   },
   {
     icon: LineChart,
     title: "Proof built into every chart",
-    body: "The backtest table reports profit factor and win rate on any symbol and timeframe before you risk a dollar.",
+    body: "The Results table reports win rate on any symbol and timeframe before you risk a dollar.",
   },
   {
     icon: Sparkles,
-    title: "One price. Everything included",
-    body: "No upsells, no add-ons. Signals, risk management, alerts and backtesting ship together from day one.",
+    title: "One single price. All-inclusive",
+    body: "No upsells or add-ons. Signals, risk management, alerts, and results are included from day one.",
   },
 ];
 
 const steps = [
   {
     n: "1",
-    title: "Get access",
-    body: "Pick a plan and complete checkout. Enter your TradingView username and the invite lands instantly.",
+    title: "Unlock access",
+    body: "Choose your plan, complete checkout, and enter your TradingView username. Your invite arrives instantly.",
   },
   {
     n: "2",
     title: "Find RAPID3",
-    body: "Search \"RAPID3\" in the TradingView indicator list, add it to favourites and it appears on your chart.",
+    body: "Search \"RAPID3\" in TradingView's indicator list, add it to your favorites, and apply it to any chart instantly.",
   },
   {
     n: "3",
@@ -116,21 +116,21 @@ const steps = [
 ];
 
 const others = [
-  "Signals repaint after a loss — you never know if it was real",
-  "No TP/SL — you guess where to exit every trade",
-  "No backtest — zero proof it actually works",
+  "Signals repaint after losses — you never know if they were real",
+  "No TP/SL — you're left guessing every exit",
+  "No backtest — no proof it actually works",
   "One market, one timeframe — limited and inflexible",
   "No community — you're on your own after purchase",
-  "Support disappears the moment you need help",
+  "Support disappears when you need it most",
 ];
 
 const ours = [
-  "100% non-repainting — every signal locks on candle close",
-  "Auto TP/SL at 1:1 and 1:2 plus Smart Trail on every signal",
-  "Built-in backtest table — win rate and profit factor live",
-  "Any market, any timeframe — crypto, forex, indices, metals",
-  "Private member room — best setups shared per asset daily",
-  "24/7 live chat plus setup video guides, included forever",
+  "100% non-repainting — all signals confirmed at candle close",
+  "Auto TP/SL at 1:1 & 1:1.5 + customization options",
+  "Built-in resultados table — see win rate & profit trades live",
+  "Any market, any timeframe — crypto, forex, stocks",
+  "VIP Discord — Members share their best setups for every asset, every day.",
+  "24/7 live chat + setup video guides included forever",
 ];
 
 const monthlyFeatures = [
@@ -470,11 +470,11 @@ function Compare() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-primary/40 bg-surface-2/60 p-7 shadow-[var(--shadow-glow-green)]">
-            <h3 className="text-lg font-bold">RAPID3</h3>
-            <ul className="mt-5 space-y-3">
+          <div className="relative rounded-2xl border border-primary/40 bg-surface-2/60 p-8 md:p-9 shadow-[var(--shadow-glow-green)] md:scale-[1.03]">
+            <h3 className="text-xl md:text-2xl font-bold">RAPID3</h3>
+            <ul className="mt-6 space-y-4">
               {ours.map((o) => (
-                <li key={o} className="flex gap-3 text-sm">
+                <li key={o} className="flex gap-3 text-sm md:text-base">
                   <Check className="mt-0.5 size-4 shrink-0 text-green-bright" />
                   {o}
                 </li>
