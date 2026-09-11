@@ -184,14 +184,12 @@ function Nav() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a href="#top" className="flex items-center gap-2">
-          <span className="grid size-8 place-items-center rounded-lg bg-primary/20 ring-1 ring-primary/40">
                 <img
                   src={rapid3Logo}
                   alt="RAPID3"
                   className="h-10 w-auto object-contain"
                   loading="lazy"
                 />
-          </span>
         </a>
          
         <nav className="hidden items-center gap-7 md:flex">
