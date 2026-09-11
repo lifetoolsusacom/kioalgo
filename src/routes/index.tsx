@@ -1,3 +1,4 @@
+import kioAlgoLogo from "@/assets/kio_algo_logo (2).png";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -962,16 +963,18 @@ function Footer() {
               AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
             </p>
 
-            <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/50 px-3 py-1.5">
-              <span className="grid size-4 place-items-center rounded bg-primary/20 ring-1 ring-primary/35">
-                <span className="size-1.5 rounded-sm bg-green-bright" />
-              </span>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-3 py-1.5">
+              <img
+                src={kioAlgoLogo}
+                alt="KioAlgo"
+                className="h-5 w-auto object-contain"
+                loading="lazy"
+                />
               <span className="text-[10px] font-semibold text-muted-foreground">
                 Powered by <span className="font-bold text-foreground">KioAlgo</span>
               </span>
             </div>
-          </div>
-
+    
           <div className="text-center md:text-left">
             <h3 className="text-sm font-bold text-foreground">Navigation</h3>
             <nav className="mt-4 flex flex-col items-center gap-2.5 md:items-start">
