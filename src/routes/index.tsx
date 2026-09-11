@@ -1,3 +1,6 @@
+Aqui está o `src/routes/index.tsx` completo, já atualizado com o novo FAQ RAPID3 em duas colunas, cards escuros, CTA azul, ícones `+` animados e respostas expansíveis.
+
+```tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -136,32 +139,36 @@ const ours = [
 
 const faqs = [
   {
-    q: "What happens after I get access?",
-    a: "You'll enter your TradingView username at checkout and the indicator invite is granted within minutes. A setup guide and the member room link arrive by email straight away.",
+    q: "What happens after I purchase RAPID3?",
+    a: "After payment, you'll be redirected to enter your TradingView username. Access is granted instantly — find RAPID3 in Invite-Only Scripts on TradingView and add it to your chart.",
   },
   {
     q: "Does RAPID3 repaint its signals?",
-    a: "No. Every signal is confirmed and locked on candle close, so what you see in history is exactly what you would have traded live.",
+    a: "Never. All signals lock on candle close and never change. What you see is what happened.",
   },
   {
-    q: "Which markets does it work on?",
-    a: "Crypto, forex, indices, metals, energies and stocks — anything with a chart and reliable price data on TradingView.",
+    q: "What markets does RAPID3 work on?",
+    a: "Crypto, forex and stocks. RAPID3 works on any market available on TradingView.",
   },
   {
     q: "Does it work on every timeframe?",
-    a: "Yes. The logic adapts from the 1-minute chart to the daily. Most members trade the 15-minute and 1-hour charts.",
+    a: "Whether you're scalping on the 1m, trading intraday on the 1H or catching big moves on the Daily — RAPID3 works on all of them. One indicator. Every market, every timeframe.",
   },
   {
-    q: "Do I need to tune the settings myself?",
-    a: "No. Defaults are tuned to work out of the box. Advanced inputs are there if you want to shape risk targets or sensitivity.",
+    q: "Do I need to adjust the settings myself?",
+    a: "No. Default settings work right out of the box — add RAPID3 to your chart and you're ready to trade instantly. Want more? Use the built-in backtest table to find the best setup for your specific market. And in the VIP Discord, members share their top-performing configurations so you're never starting from zero.",
   },
   {
-    q: "Can I cancel any time?",
-    a: "Yes, the monthly plan can be cancelled in one click and you keep access until the end of the billing period.",
+    q: "Can I cancel my subscription at any time?",
+    a: "Yes. Cancel from your dashboard anytime. No questions asked, no hidden fees.",
+  },
+  {
+    q: "Do I get support if I need help?",
+    a: "Yes — 24/7 live chat, setup video guides and VIP Discord are included with every plan.",
   },
   {
     q: "Will I win every trade?",
-    a: "No tool wins every trade, and anyone promising that is lying. RAPID3 gives you a repeatable process with the numbers shown up front.",
+    a: "No indicator wins every trade — anyone who claims that is lying. RAPID3 gives you high-probability setups with clear risk management. The rest is up to you.",
   },
 ];
 
@@ -619,7 +626,6 @@ function Pricing() {
         </div>
 
         <div className="mx-auto mt-5 grid max-w-5xl items-stretch gap-3 lg:grid-cols-2">
-          {/* Monthly / Annual */}
           <motion.div
             className="relative flex h-full flex-col rounded-[22px] border p-5 backdrop-blur"
             animate={{
@@ -704,10 +710,7 @@ function Pricing() {
                     key={feature}
                     className="flex gap-2 text-[13px] font-bold leading-snug text-foreground/95"
                   >
-                    <motion.span
-                      animate={{ color: accent.check }}
-                      transition={{ duration: 0.4 }}
-                    >
+                    <motion.span animate={{ color: accent.check }} transition={{ duration: 0.4 }}>
                       <Check className="mt-0.5 size-3.5 shrink-0" />
                     </motion.span>
                     {feature}
@@ -730,11 +733,10 @@ function Pricing() {
             </motion.a>
 
             <p className="mt-2 flex h-[18px] items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
-               Secure your access now.
+              ⚠️ Secure your access now.
             </p>
           </motion.div>
 
-          {/* Lifetime */}
           <div
             className="relative flex h-full flex-col rounded-[22px] border p-5 backdrop-blur"
             style={{
@@ -823,38 +825,86 @@ function Pricing() {
 }
 
 function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
+
+  const leftColumn = faqs.slice(0, 4);
+  const rightColumn = faqs.slice(4, 8);
+
+  const renderFaqItem = (faq: (typeof faqs)[number], index: number) => {
+    const isOpen = open === index;
+
+    return (
+      <div
+        key={faq.q}
+        className={`overflow-hidden rounded-2xl border bg-[#0a0b10] transition-all duration-300 ${
+          isOpen
+            ? "border-[#0066ff]/60 shadow-[0_0_28px_-12px_rgba(0,102,255,0.8)]"
+            : "border-[#1c2230] hover:border-[#0066ff]/35"
+        }`}
+      >
+        <button
+          type="button"
+          onClick={() => setOpen(isOpen ? null : index)}
+          aria-expanded={isOpen}
+          className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left"
+        >
+          <span className="text-sm font-bold text-white md:text-base">{faq.q}</span>
+
+          <span
+            className={`flex size-8 shrink-0 items-center justify-center rounded-full border border-[#0066ff]/45 bg-[#0066ff]/10 text-xl font-medium leading-none text-[#0066ff] transition-all duration-300 ${
+              isOpen ? "rotate-45 bg-[#0066ff]/20 shadow-[0_0_16px_rgba(0,102,255,0.8)]" : ""
+            }`}
+            aria-hidden="true"
+          >
+            +
+          </span>
+        </button>
+
+        <div
+          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+            isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <p className="border-t border-[#1c2230] px-6 py-5 text-sm leading-relaxed text-[#a0a5b5]">
+              {faq.a}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <section id="faq" className="py-24">
-      <div className="mx-auto max-w-3xl px-5">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Any questions left?"
-          sub="Everything you need to know about RAPID3."
-        />
+    <section id="faq" className="relative overflow-hidden bg-[#0a0b10] py-24">
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="flex flex-col gap-8 border-b border-[#1c2230] pb-8 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs font-bold tracking-widest text-[#0066ff]">FAQ</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-white md:text-5xl">
+              Any questions left?
+            </h2>
+            <p className="mt-4 text-base text-[#a0a5b5]">
+              Everything you need to know about RAPID3.
+            </p>
+          </div>
 
-        <div className="mt-12 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-surface/60">
-          {faqs.map((faq, i) => (
-            <div key={faq.q}>
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                aria-expanded={open === i}
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold"
-              >
-                {faq.q}
-                <ChevronDown
-                  className={`size-4 shrink-0 text-muted-foreground transition-transform ${
-                    open === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+          <a
+            href="#pricing"
+            className="inline-flex w-fit items-center gap-2 border-t border-[#0066ff]/30 pt-4 text-sm font-bold text-[#0066ff] transition-colors hover:text-[#4d94ff]"
+          >
+            Claim Early Access <ArrowUpRight className="size-4" />
+          </a>
+        </div>
 
-              {open === i && (
-                <p className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
-              )}
-            </div>
-          ))}
+        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+          <div className="space-y-4">
+            {leftColumn.map((faq, index) => renderFaqItem(faq, index))}
+          </div>
+
+          <div className="space-y-4">
+            {rightColumn.map((faq, index) => renderFaqItem(faq, index + 4))}
+          </div>
         </div>
       </div>
     </section>
@@ -918,3 +968,4 @@ function Index() {
     </div>
   );
 }
+```
