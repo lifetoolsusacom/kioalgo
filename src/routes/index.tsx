@@ -1019,7 +1019,7 @@ function Footer() {
         </div>
 
         <div className="pt-8 text-center">
-          <p className="text-[8px] text-muted-foreground/70">
+          <p className="text-[9px] text-muted-foreground/70">
             © 2026 KioAlgo. All Rights Reserved. · Built for TradingView · Available worldwide
           </p>
 
