@@ -513,16 +513,25 @@ function Pricing() {
         check: "#1769FF",
       };
 
+  const priceFont =
+    '"Arial Narrow", "Roboto Condensed", Impact, Haettenschweiler, sans-serif';
+
+  const priceClass =
+    "bg-clip-text text-[52px] font-black leading-[0.82] tracking-[-0.07em] text-transparent drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)] sm:text-[60px]";
+
   return (
-    <section id="pricing" className="relative py-14">
+    <section id="pricing" className="relative py-10">
       <div className="hero-glow pointer-events-none absolute inset-0 opacity-30" />
+
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHeading eyebrow="PRICING" title="Choose your plan" sub="Cancel any time." />
 
-        <div className="mx-auto mt-6 flex w-fit items-center gap-3 rounded-full border border-border bg-surface/80 px-4 py-2 backdrop-blur">
+        <div className="mx-auto mt-5 flex w-fit items-center gap-3 rounded-full border border-border bg-surface/80 px-4 py-2 backdrop-blur">
           <span
             className="text-sm font-bold transition-colors duration-300"
-            style={{ color: isAnnual ? "var(--muted-foreground)" : "var(--foreground)" }}
+            style={{
+              color: isAnnual ? "var(--muted-foreground)" : "var(--foreground)",
+            }}
           >
             Monthly
           </span>
@@ -534,7 +543,9 @@ function Pricing() {
             onClick={() => setBillingPeriod(isAnnual ? "monthly" : "annual")}
             className="relative h-8 w-[60px] shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             style={{
-              backgroundColor: isAnnual ? "rgba(255, 43, 43, 0.18)" : "rgba(23, 105, 255, 0.18)",
+              backgroundColor: isAnnual
+                ? "rgba(255, 43, 43, 0.18)"
+                : "rgba(23, 105, 255, 0.18)",
               boxShadow: isAnnual
                 ? "0 0 18px rgba(255, 43, 43, 0.35), inset 0 0 0 1px rgba(255, 43, 43, 0.4)"
                 : "0 0 18px rgba(23, 105, 255, 0.35), inset 0 0 0 1px rgba(23, 105, 255, 0.4)",
@@ -559,7 +570,9 @@ function Pricing() {
 
           <span
             className="text-sm font-bold transition-colors duration-300"
-            style={{ color: isAnnual ? "#FF4040" : "var(--muted-foreground)" }}
+            style={{
+              color: isAnnual ? "#FF4040" : "var(--muted-foreground)",
+            }}
           >
             Annual
           </span>
@@ -569,13 +582,13 @@ function Pricing() {
           </span>
         </div>
 
-        <div className="mt-6 grid items-stretch gap-4 lg:grid-cols-2">
+        <div className="mx-auto mt-5 grid max-w-5xl items-start gap-3 lg:grid-cols-2">
           {/* Monthly / Annual card */}
           <motion.div
-            className="relative flex flex-col rounded-[24px] border p-6 backdrop-blur"
+            className="relative flex flex-col rounded-[22px] border p-5 backdrop-blur"
             animate={{
               borderColor: accent.border,
-              boxShadow: `0 0 40px -12px ${accent.glow}`,
+              boxShadow: `0 0 32px -12px ${accent.glow}`,
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             style={{ backgroundColor: "#0b0a12" }}
@@ -594,6 +607,7 @@ function Pricing() {
                   {isAnnual ? "ANNUAL" : "MONTHLY"}
                 </motion.span>
               </AnimatePresence>
+
               <AnimatePresence>
                 {isAnnual && (
                   <motion.span
@@ -608,9 +622,12 @@ function Pricing() {
                 )}
               </AnimatePresence>
             </div>
-            <p className="mt-1 text-xs font-bold text-muted-foreground">Cancel any time.</p>
 
-            <div className="relative mt-3 min-h-[72px] overflow-hidden">
+            <p className="mt-1 text-xs font-bold text-muted-foreground">
+              Cancel any time.
+            </p>
+
+            <div className="relative mt-2.5 min-h-[68px] overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={isAnnual ? "annual-price" : "monthly-price"}
@@ -620,14 +637,16 @@ function Pricing() {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
                   <p
-                    className="bg-clip-text text-[56px] font-black leading-none tracking-tight text-transparent drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)] sm:text-[64px]"
+                    className={priceClass}
                     style={{
                       backgroundImage: `linear-gradient(135deg, ${accent.priceFrom}, ${accent.priceTo})`,
                       WebkitTextStroke: "0.5px rgba(255,255,255,0.15)",
+                      fontFamily: priceFont,
                     }}
                   >
                     {isAnnual ? "$24.92" : "$49.99"}
                   </p>
+
                   <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">
                     /month
                     {isAnnual && (
@@ -640,24 +659,34 @@ function Pricing() {
               </AnimatePresence>
             </div>
 
-            <p className="mt-4 text-xs font-bold tracking-widest text-muted-foreground">
+            <p className="mt-3 text-xs font-bold tracking-widest text-muted-foreground">
               EVERYTHING INCLUDED
             </p>
-            <ul className="mt-2.5 space-y-2">
-              {planFeatures.map((f) => (
-                <li key={f} className="flex gap-2.5 text-sm font-bold text-foreground/95">
-                  <motion.span animate={{ color: accent.check }} transition={{ duration: 0.4 }}>
-                    <Check className="mt-0.5 size-4 shrink-0" />
+
+            <ul className="mt-2 space-y-1.5">
+              {planFeatures.map((feature) => (
+                <li
+                  key={feature}
+                  className="flex gap-2 text-[13px] font-bold leading-snug text-foreground/95"
+                >
+                  <motion.span
+                    animate={{ color: accent.check }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <Check className="mt-0.5 size-3.5 shrink-0" />
                   </motion.span>
-                  {f}
+                  {feature}
                 </li>
               ))}
             </ul>
 
             <motion.a
               href="#top"
-              className="mt-5 flex h-[52px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white"
-              animate={{ background: accent.button, boxShadow: accent.buttonGlow }}
+              className="mt-4 flex h-[50px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white"
+              animate={{
+                background: accent.button,
+                boxShadow: accent.buttonGlow,
+              }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               whileHover={{ scale: 1.01 }}
             >
@@ -667,49 +696,65 @@ function Pricing() {
 
           {/* Lifetime card */}
           <div
-            className="relative flex flex-col rounded-[24px] border p-6 backdrop-blur"
+            className="relative flex flex-col rounded-[22px] border p-5 backdrop-blur"
             style={{
               backgroundColor: "#0b0a12",
               borderColor: "#8B2CFF",
-              boxShadow: "0 0 40px -12px rgba(139,44,255,0.4)",
+              boxShadow: "0 0 32px -12px rgba(139,44,255,0.4)",
             }}
           >
-            <span className="absolute -top-3 left-6 rounded-full bg-[#8B2CFF] px-3 py-1 text-xs font-bold text-white">
+            <span className="absolute -top-3 left-5 rounded-full bg-[#8B2CFF] px-3 py-1 text-xs font-bold text-white">
               BEST VALUE
             </span>
-            <p className="text-xs font-extrabold tracking-widest text-[#B98CFF]">LIFETIME</p>
+
+            <p className="text-xs font-extrabold tracking-widest text-[#B98CFF]">
+              LIFETIME
+            </p>
+
             <p className="mt-1 text-xs font-bold text-muted-foreground">
               Own It Forever. No Renewals Ever.
             </p>
+
             <p
-              className="mt-3 bg-clip-text text-[56px] font-black leading-none tracking-tight text-transparent drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)] sm:text-[64px]"
+              className={`mt-2.5 ${priceClass}`}
               style={{
                 backgroundImage: "linear-gradient(135deg, #F3E8FF, #8B2CFF)",
                 WebkitTextStroke: "0.5px rgba(255,255,255,0.15)",
+                fontFamily: priceFont,
               }}
             >
               $439
             </p>
-            <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">one-time payment</p>
 
-            <p className="mt-4 text-xs font-bold tracking-widest text-muted-foreground">
+            <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">
+              one-time payment
+            </p>
+
+            <p className="mt-3 text-xs font-bold tracking-widest text-muted-foreground">
               EVERYTHING INCLUDED, PLUS
             </p>
-            <ul className="mt-2.5 space-y-2">
-              {planFeatures.map((f) => (
-                <li key={f} className="flex gap-2.5 text-sm font-bold text-foreground/95">
-                  <Check className="mt-0.5 size-4 shrink-0 text-[#B98CFF]" />
-                  {f}
+
+            <ul className="mt-2 space-y-1.5">
+              {planFeatures.map((feature) => (
+                <li
+                  key={feature}
+                  className="flex gap-2 text-[13px] font-bold leading-snug text-foreground/95"
+                >
+                  <Check className="mt-0.5 size-3.5 shrink-0 text-[#B98CFF]" />
+                  {feature}
                 </li>
               ))}
             </ul>
 
             <div className="mt-3 border-t border-border/60 pt-3">
               <ul className="space-y-1.5">
-                {lifetimePerks.map((p) => (
-                  <li key={p} className="flex gap-2 text-sm font-bold text-foreground/95">
-                    <Zap className="mt-0.5 size-4 shrink-0 text-yellow-400" />
-                    {p}
+                {lifetimePerks.map((perk) => (
+                  <li
+                    key={perk}
+                    className="flex gap-2 text-[13px] font-bold leading-snug text-foreground/95"
+                  >
+                    <Zap className="mt-0.5 size-3.5 shrink-0 text-yellow-400" />
+                    {perk}
                   </li>
                 ))}
               </ul>
@@ -717,7 +762,7 @@ function Pricing() {
 
             <a
               href="#top"
-              className="mt-5 flex h-[52px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white transition-transform duration-300 hover:scale-[1.01]"
+              className="mt-4 flex h-[50px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white transition-transform duration-300 hover:scale-[1.01]"
               style={{
                 background: "linear-gradient(135deg, #8B2CFF, #B266FF)",
                 boxShadow: "0 8px 32px -8px rgba(139,44,255,0.6)",
@@ -725,7 +770,8 @@ function Pricing() {
             >
               Get Lifetime Access <ArrowRight className="size-4" />
             </a>
-            <p className="mt-2.5 flex items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
+
+            <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
               ⚠️ Only 1 of 8 Founding spots remaining
             </p>
           </div>
@@ -734,7 +780,6 @@ function Pricing() {
     </section>
   );
 }
-
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
