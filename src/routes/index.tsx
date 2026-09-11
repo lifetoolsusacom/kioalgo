@@ -185,11 +185,15 @@ function Nav() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a href="#top" className="flex items-center gap-2">
           <span className="grid size-8 place-items-center rounded-lg bg-primary/20 ring-1 ring-primary/40">
-            <Zap className="size-4 text-green-bright" />
+                <img
+                  src={rapid3Logo}
+                  alt="RAPID3"
+                  className="h-10 w-auto object-contain"
+                  loading="lazy"
+                />
           </span>
-          <span className="font-display text-lg font-extrabold tracking-tight">RAPID3</span>
         </a>
-
+         
         <nav className="hidden items-center gap-7 md:flex">
           {links.map(([label, href]) => (
             <a
