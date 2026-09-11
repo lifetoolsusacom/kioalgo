@@ -931,23 +931,6 @@ function FinalCta() {
 }
 
 function Footer() {
-  return (
-    <footer className="border-t border-border bg-ink py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-sm text-muted-foreground md:flex-row">
-        <div className="flex items-center gap-2 font-display font-extrabold text-foreground">
-          <Zap className="size-4 text-green-bright" /> RAPID3
-        </div>
-
-        <p className="max-w-md text-center text-xs md:text-right">
-          Trading involves risk. RAPID3 is an analysis tool, not financial advice. Past performance
-          does not guarantee future results.
-        </p>
-      </div>
-    </footer>
-  );
-}
-
-function Footer() {
   const navigation = [
     ["Why RAPID3?", "#why"],
     ["Features", "#features"],
