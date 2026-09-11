@@ -1,4 +1,4 @@
-import kioAlgoLogo from "@/assets/kio_algo_logo1.png";
+import kioAlgoLogo from "@/assets/kio_algo_logo.png";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
