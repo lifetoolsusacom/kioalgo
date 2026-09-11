@@ -1,4 +1,5 @@
 import kioAlgoLogo from "@/assets/kio_algo_logo.png";
+import rapid3Logo from "@/assets/RAPID3PNG.png";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -954,13 +955,16 @@ function Footer() {
               <span className="grid size-9 place-items-center rounded-lg bg-primary/20 ring-1 ring-primary/40">
                 <Zap className="size-4 text-green-bright" />
               </span>
-              <span className="font-display text-2xl font-extrabold tracking-tight text-foreground">
-                RAPID3™
-              </span>
+                <img
+                  src={rapid3Logo}
+                  alt="RAPID3"
+                  className="h-12 w-auto object-contain"
+                  loading="lazy"
+              />
             </a>
 
             <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted-foreground md:max-w-xs">
-              AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
+              Powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
             </p>
 
             <a
@@ -972,7 +976,7 @@ function Footer() {
               <img
                 src={kioAlgoLogo}
                 alt="KioAlgo"
-                className="h-16 w-auto object-contain"
+                className="h-12 w-auto object-contain"
                 loading="lazy"
               />
             </a>
