@@ -1023,58 +1023,51 @@ function Footer() {
             © 2026 KioAlgo. All Rights Reserved. · Built for TradingView · Available worldwide
           </p>
 
-          <div className="mx-auto mt-6 max-w-4xl space-y-3 text-center text-[9px] leading-relaxed text-muted-foreground/70 sm:text-[11px]">
-            <p>
-              <span className="font-semibold text-muted-foreground">Risk Disclaimer:</span> Trading
-              financial instruments — including forex, cryptocurrency, stocks, futures, and indices
-              — carries a significant risk of loss and is not suitable for all investors. The
-              majority of retail traders lose money. You should carefully consider your financial
-              situation, investment objectives, and risk tolerance before engaging in any form of
-              trading activity.
-            </p>
+          <div className="mx-auto mt-6 max-w-4xl space-y-3 text-center text-[9px] leading-relaxed text-muted-foreground/70 sm:text-[11px]"> <p> <span className="font-semibold text-muted-foreground">Risk Disclaimer:</span> Trading financial instruments — including forex, cryptocurrency, stocks, futures, and indices — involves substantial risk of loss and may not be suitable for every investor. Most retail traders lose money. Before trading, carefully evaluate your financial circumstances, investment objectives, and personal risk tolerance. </p>
 
-            <p>
-              RAPID3 and its associated tools, signals, educational content, and community resources
-              are provided strictly for informational and educational purposes. Nothing on this
-              website, within the Discord community, or in any communications from the KioAlgo team
-              constitutes financial advice or a recommendation to buy or sell any financial
-              instrument. All content should be considered hypothetical and illustrative in nature,
-              selected to demonstrate the product&apos;s capabilities, and must not be interpreted as
-              a guarantee of future performance or profit.
-            </p>
+        <p>
+          RAPID3 and all related tools, signals, educational materials, and community resources
+          are provided solely for informational and educational purposes. Nothing on this
+          website, in the Discord community, or in communications from the KioAlgo team
+          constitutes financial advice or a recommendation to buy or sell any financial
+          instrument. All content is hypothetical and illustrative, intended to demonstrate
+          product functionality, and should never be viewed as a promise or guarantee of future
+          performance, results, or profits.
+        </p>
 
-            <p>
-              Past performance of any signal, strategy, or trading result shown on this platform —
-              including backtested results — does not guarantee similar results in the future.
-              Backtested and simulated results have inherent limitations: they are constructed with
-              the benefit of hindsight and do not reflect real market conditions such as slippage,
-              liquidity constraints, or execution delays.
-            </p>
+        <p>
+          Past performance of any signal, strategy, or trading result presented on this platform
+          — including backtested results — is not indicative of future performance. Backtested
+          and simulated results have inherent limitations: they are created using historical
+          data and hindsight and may not account for real-world factors such as slippage,
+          liquidity limitations, spreads, or execution delays.
+        </p>
 
-            <p>
-              Testimonials and results shared by users of RAPID3 reflect individual experiences and
-              are not representative of typical outcomes. Individual results will vary based on
-              market conditions, personal trading decisions, and risk management practices.
-            </p>
+        <p>
+          Testimonials and results shared by RAPID3 users represent individual experiences and
+          should not be considered typical or representative of expected results. Individual
+          outcomes will vary depending on market conditions, trading decisions, execution,
+          account size, and personal risk management practices.
+        </p>
 
-            <p>
-              Charts and visual examples on this site are powered by{" "}
-              <a
-                href="https://www.tradingview.com"
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium text-muted-foreground underline decoration-primary/60 underline-offset-2 transition-colors hover:text-green-bright"
-              >
-                TradingView®
-              </a>
-              . TradingView® is a registered trademark of TradingView, Inc. RAPID3 is an
-              independent third-party tool built for use within the TradingView platform.
-              TradingView® has no affiliation with KioAlgo or the services described herein.
-            </p>
+        <p>
+          Charts and visual examples on this site are powered by{" "}
+          <a
+            href="https://www.tradingview.com"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-muted-foreground underline decoration-primary/60 underline-offset-2 transition-colors hover:text-green-bright"
+          >
+            TradingView®
+          </a>
+          . TradingView® is a registered trademark of TradingView, Inc. RAPID3 is an
+          independent third-party tool designed for use within the TradingView platform.
+          TradingView® is not affiliated with KioAlgo or any of the services described herein.
+        </p>
 
-            <p className="pt-1 text-[10px] font-semibold text-muted-foreground sm:text-[11px]">
-              Always trade responsibly. Never risk capital you cannot afford to lose.
-            </p>
+        <p className="pt-1 text-[10px] font-semibold text-muted-foreground sm:text-[11px]">
+          Trade responsibly. Never risk money you cannot afford to lose.
+        </p>
           </div>
         </div>
       </div>
