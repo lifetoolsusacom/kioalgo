@@ -952,13 +952,10 @@ function Footer() {
         <div className="grid gap-10 border-b border-border pb-10 md:grid-cols-[minmax(0,1.6fr)_minmax(0,0.7fr)_minmax(0,0.7fr)]">
           <div className="text-center md:text-left">
             <a href="#top" className="inline-flex items-center gap-2">
-              <span className="grid size-9 place-items-center rounded-lg bg-primary/20 ring-1 ring-primary/40">
-                <Zap className="size-4 text-green-bright" />
-              </span>
                 <img
                   src={rapid3Logo}
                   alt="RAPID3"
-                  className="h-12 w-auto object-contain"
+                  className="h-8 w-auto object-contain"
                   loading="lazy"
               />
             </a>
