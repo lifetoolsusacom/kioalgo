@@ -1,6 +1,3 @@
-Aqui está o `src/routes/index.tsx` completo, já atualizado com o novo FAQ RAPID3 em duas colunas, cards escuros, CTA azul, ícones `+` animados e respostas expansíveis.
-
-```tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -968,4 +965,3 @@ function Index() {
     </div>
   );
 }
-```
