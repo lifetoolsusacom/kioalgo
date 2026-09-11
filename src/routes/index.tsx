@@ -153,16 +153,20 @@ const faqs = [
     a: "Never. All signals lock on candle close and never change. What you see is what happened.",
   },
   {
-    q: "What markets does RAPID3 work on?",
-    a: "Crypto, forex and stocks. RAPID3 works on any market available on TradingView.",
-  },
-  {
-    q: "Does it work on every timeframe?",
-    a: "Whether you're scalping on the 1m, trading intraday on the 1H or catching big moves on the Daily — RAPID3 works on all of them. One indicator. Every market, every timeframe.",
+    q: "Will I win every trade?",
+    a: "No indicator wins every trade — and RAPID3 never promises that. It identifies high-probability setups, helps you manage risk, and gives you clearer signals to act on. Your execution makes the difference.",
   },
   {
     q: "Do I need to adjust the settings myself?",
-    a: "No. Default settings work right out of the box — add RAPID3 to your chart and you're ready to trade instantly. Want more? Use the built-in backtest table to find the best setup for your specific market. And in the VIP Discord, members share their top-performing configurations so you're never starting from zero.",
+    a: "No setup required. RAPID3 works right out of the box — add it to your chart and start trading instantly. Want more? Use the built-in results table to find your best setup, or join VIP Discord to access top-performing configurations shared by members.",
+  },
+  {
+    q: "Does it work on every timeframe?",
+    a: "From 1m scalps to 1H intraday trades and Daily big moves — RAPID3 adapts to them all. One indicator. Every market. Every timeframe.",
+  },
+  {
+    q: "What markets does RAPID3 work on?",
+    a: "Crypto, forex and stocks. RAPID3 works on any market available on TradingView.",
   },
   {
     q: "Can I cancel my subscription at any time?",
@@ -170,11 +174,7 @@ const faqs = [
   },
   {
     q: "Do I get support if I need help?",
-    a: "Yes — 24/7 live chat, setup video guides and VIP Discord are included with every plan.",
-  },
-  {
-    q: "Will I win every trade?",
-    a: "No indicator wins every trade — anyone who claims that is lying. RAPID3 gives you high-probability setups with clear risk management. The rest is up to you.",
+    a: "Yes — 24/7 live chat, step-by-step setup guides, and VIP Discord access are included with every plan.",
   },
 ];
 
@@ -741,7 +741,7 @@ function Pricing() {
             </motion.a>
 
             <p className="mt-2 flex h-[18px] items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
-              ⚠️ Secure your access now.
+              Secure your access now.
             </p>
           </motion.div>
 
@@ -890,7 +890,7 @@ function Faq() {
           <div>
             <p className="text-xs font-bold tracking-widest text-green-bright">FAQ</p>
             <h2 className="mt-3 text-3xl font-extrabold text-foreground md:text-5xl">
-              Any questions left?
+              Still have questions?
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
               Everything you need to know about RAPID3.
@@ -927,7 +927,7 @@ function FinalCta() {
       <div className="relative mx-auto max-w-2xl px-5 text-center">
         <h2 className="text-3xl font-extrabold md:text-5xl">Ready to trade smarter?</h2>
         <p className="mt-4 text-muted-foreground">
-          Join the traders who stopped guessing and started executing with an edge.
+          Join the traders who stopped guessing and started trading with confidence.
         </p>
 
         <a
