@@ -1019,11 +1019,11 @@ function Footer() {
         </div>
 
         <div className="pt-8 text-center">
-          <p className="text-[10px] text-muted-foreground/70">
+          <p className="text-[8px] text-muted-foreground/70">
             © 2026 KioAlgo. All Rights Reserved. · Built for TradingView · Available worldwide
           </p>
 
-          <div className="mx-auto mt-6 max-w-4xl space-y-3 text-center text-[10px] leading-relaxed text-muted-foreground/70 sm:text-[11px]">
+          <div className="mx-auto mt-6 max-w-4xl space-y-3 text-center text-[9px] leading-relaxed text-muted-foreground/70 sm:text-[11px]">
             <p>
               <span className="font-semibold text-muted-foreground">Risk Disclaimer:</span> Trading
               financial instruments — including forex, cryptocurrency, stocks, futures, and indices
