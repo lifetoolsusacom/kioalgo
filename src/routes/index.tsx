@@ -963,12 +963,12 @@ function Footer() {
               AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
             </p>
 
-            <div className="mt-12 flex items-center justify-center gap-2.5 md:justify-start">
+            <div className="mt-16 flex items-center justify-center gap-2.5 md:justify-start">
               <span className="text-sm font-medium text-muted-foreground">Powered by</span>
               <img
                 src={kioAlgoLogo}
                 alt="KioAlgo"
-                className="h-22 w-auto object-contain"
+                className="h-32 w-auto object-contain"
                 loading="lazy"
               />
             </div>
