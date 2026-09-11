@@ -1,5 +1,5 @@
 import kioAlgoLogo from "@/assets/kio_algo_logo.png";
-import rapid3Logo from "@/assets/RAPID3PNG.png";
+import rapid3Logo from "@/assets/RAPID3PNG1.png";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
