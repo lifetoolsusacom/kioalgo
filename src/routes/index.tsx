@@ -1066,3 +1066,22 @@ function Footer() {
     </footer>
   );
 }
+
+function Index() {
+  return (
+    <div className="min-h-screen bg-background">
+      <Nav />
+      <main>
+        <Hero />
+        <Marquee />
+        <Features />
+        <How />
+        <Compare />
+        <Pricing />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
+    </div>
+  );
+}
