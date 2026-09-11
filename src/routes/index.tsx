@@ -946,40 +946,40 @@ function Footer() {
 
   return (
     <footer className="border-t border-border bg-ink">
-      <div className="mx-auto max-w-5xl px-5 py-12 text-center">
-        <div className="flex flex-col items-center">
-          <a href="#top" className="inline-flex items-center gap-2">
-            <span className="grid size-8 place-items-center rounded-lg bg-primary/20 ring-1 ring-primary/40">
-              <Zap className="size-4 text-green-bright" />
-            </span>
-            <span className="font-display text-xl font-extrabold tracking-tight text-foreground">
-              RAPID3™
-            </span>
-          </a>
+      <div className="mx-auto max-w-6xl px-5 pt-14 pb-10">
+        <div className="grid gap-10 border-b border-border pb-10 md:grid-cols-[minmax(0,1.6fr)_minmax(0,0.7fr)_minmax(0,0.7fr)]">
+          <div className="text-center md:text-left">
+            <a href="#top" className="inline-flex items-center gap-2">
+              <span className="grid size-9 place-items-center rounded-lg bg-primary/20 ring-1 ring-primary/40">
+                <Zap className="size-4 text-green-bright" />
+              </span>
+              <span className="font-display text-2xl font-extrabold tracking-tight text-foreground">
+                RAPID3™
+              </span>
+            </a>
 
-          <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted-foreground">
-            AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
-          </p>
+            <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted-foreground md:max-w-xs">
+              AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
+            </p>
 
-          <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/50 px-3 py-1.5">
-            <span className="grid size-4 place-items-center rounded bg-primary/20 ring-1 ring-primary/35">
-              <span className="size-1.5 rounded-sm bg-green-bright" />
-            </span>
-            <span className="text-[10px] font-semibold text-muted-foreground">
-              Powered by <span className="font-bold text-foreground">KioAlgo</span>
-            </span>
+            <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/50 px-3 py-1.5">
+              <span className="grid size-4 place-items-center rounded bg-primary/20 ring-1 ring-primary/35">
+                <span className="size-1.5 rounded-sm bg-green-bright" />
+              </span>
+              <span className="text-[10px] font-semibold text-muted-foreground">
+                Powered by <span className="font-bold text-foreground">KioAlgo</span>
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-9 flex flex-col items-center gap-7 border-y border-border py-7 sm:flex-row sm:justify-center sm:gap-14">
-          <div>
-            <h3 className="text-xs font-bold text-foreground">Navigation</h3>
-            <nav className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2">
+          <div className="text-center md:text-left">
+            <h3 className="text-sm font-bold text-foreground">Navigation</h3>
+            <nav className="mt-4 flex flex-col items-center gap-2.5 md:items-start">
               {navigation.map(([label, href]) => (
                 <a
                   key={href}
                   href={href}
-                  className="text-[11px] text-muted-foreground transition-colors hover:text-green-bright"
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-green-bright"
                 >
                   {label}
                 </a>
@@ -987,14 +987,14 @@ function Footer() {
             </nav>
           </div>
 
-          <div>
-            <h3 className="text-xs font-bold text-foreground">Socials</h3>
-            <nav className="mt-3 flex justify-center gap-4">
+          <div className="text-center md:text-left">
+            <h3 className="text-sm font-bold text-foreground">Socials</h3>
+            <nav className="mt-4 flex flex-col items-center gap-2.5 md:items-start">
               {socials.map(([label, href]) => (
                 <a
                   key={label}
                   href={href}
-                  className="text-[11px] text-muted-foreground transition-colors hover:text-green-bright"
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-green-bright"
                 >
                   {label}
                 </a>
@@ -1003,7 +1003,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="pt-8 text-center">
           <p className="text-[10px] text-muted-foreground/70">
             © 2026 KioAlgo. All Rights Reserved. · Built for TradingView · Available worldwide
           </p>
