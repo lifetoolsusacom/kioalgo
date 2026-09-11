@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "RAPID3 is a complete trading system: non-repainting signals, automatic TP/SL, smart trailing and a built-in backtest table on every chart.",
+          "RAPID3 is a complete trading system: non-repainting signals, automatic TP/SL and a built-in results table on every chart.",
       },
       { property: "og:title", content: "RAPID3 — Stop Guessing. Start Executing." },
       {
@@ -221,7 +221,7 @@ function Hero() {
         </h1>
         <p className="mx-auto mt-7 max-w-2xl text-base text-muted-foreground md:text-lg">
           Precision signals with automatic take-profit and stop-loss, zero repaints, and a built-in
-          backtest that shows exactly how RAPID3 performs — before you risk a single dollar.
+          results that shows exactly how RAPID3 performs — before you risk a single dollar.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-muted-foreground">
           <span className="flex items-center gap-2">
