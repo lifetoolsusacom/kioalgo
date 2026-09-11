@@ -183,7 +183,7 @@ function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="flex items-center gap-2">
+        <a href="#top" className="ml-4 flex items-center gap-2">
                 <img
                   src={rapid3Logo}
                   alt="RAPID3"
