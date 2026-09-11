@@ -730,7 +730,7 @@ function Pricing() {
             </motion.a>
 
             <p className="mt-2 flex h-[18px] items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
-               Secure your access now.
+              ⚠️ Secure your access now.
             </p>
           </motion.div>
 
@@ -1064,5 +1064,24 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function Index() {
+  return (
+    <div className="min-h-screen bg-background">
+      <Nav />
+      <main>
+        <Hero />
+        <Marquee />
+        <Features />
+        <How />
+        <Compare />
+        <Pricing />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
+    </div>
   );
 }
