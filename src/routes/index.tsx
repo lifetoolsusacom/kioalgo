@@ -834,10 +834,10 @@ function Faq() {
     return (
       <div
         key={faq.q}
-        className={`overflow-hidden rounded-2xl border bg-[#0a0b10] transition-all duration-300 ${
+        className={`overflow-hidden rounded-2xl border bg-surface/70 transition-all duration-300 ${
           isOpen
-            ? "border-[#0066ff]/60 shadow-[0_0_28px_-12px_rgba(0,102,255,0.8)]"
-            : "border-[#1c2230] hover:border-[#0066ff]/35"
+            ? "border-primary/60 shadow-[var(--shadow-glow-green)]"
+            : "border-border hover:border-primary/35"
         }`}
       >
         <button
@@ -846,11 +846,11 @@ function Faq() {
           aria-expanded={isOpen}
           className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left"
         >
-          <span className="text-sm font-bold text-white md:text-base">{faq.q}</span>
+          <span className="text-sm font-bold text-foreground md:text-base">{faq.q}</span>
 
           <span
-            className={`flex size-8 shrink-0 items-center justify-center rounded-full border border-[#0066ff]/45 bg-[#0066ff]/10 text-xl font-medium leading-none text-[#0066ff] transition-all duration-300 ${
-              isOpen ? "rotate-45 bg-[#0066ff]/20 shadow-[0_0_16px_rgba(0,102,255,0.8)]" : ""
+            className={`flex size-8 shrink-0 items-center justify-center rounded-full border border-primary/45 bg-primary/10 text-xl font-medium leading-none text-green-bright transition-all duration-300 ${
+              isOpen ? "rotate-45 bg-primary/20 shadow-[0_0_16px_var(--green-bright)]" : ""
             }`}
             aria-hidden="true"
           >
@@ -864,7 +864,7 @@ function Faq() {
           }`}
         >
           <div className="overflow-hidden">
-            <p className="border-t border-[#1c2230] px-6 py-5 text-sm leading-relaxed text-[#a0a5b5]">
+            <p className="border-t border-border px-6 py-5 text-sm leading-relaxed text-muted-foreground">
               {faq.a}
             </p>
           </div>
@@ -874,22 +874,22 @@ function Faq() {
   };
 
   return (
-    <section id="faq" className="relative overflow-hidden bg-[#0a0b10] py-24">
+    <section id="faq" className="relative overflow-hidden py-24">
       <div className="mx-auto max-w-6xl px-5">
-        <div className="flex flex-col gap-8 border-b border-[#1c2230] pb-8 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-8 border-b border-border pb-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs font-bold tracking-widest text-[#0066ff]">FAQ</p>
-            <h2 className="mt-3 text-3xl font-extrabold text-white md:text-5xl">
+            <p className="text-xs font-bold tracking-widest text-green-bright">FAQ</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-foreground md:text-5xl">
               Any questions left?
             </h2>
-            <p className="mt-4 text-base text-[#a0a5b5]">
+            <p className="mt-4 text-base text-muted-foreground">
               Everything you need to know about RAPID3.
             </p>
           </div>
 
           <a
             href="#pricing"
-            className="inline-flex w-fit items-center gap-2 border-t border-[#0066ff]/30 pt-4 text-sm font-bold text-[#0066ff] transition-colors hover:text-[#4d94ff]"
+            className="inline-flex w-fit items-center gap-2 border-t border-primary/30 pt-4 text-sm font-bold text-green-bright transition-colors hover:text-foreground"
           >
             Claim Early Access <ArrowUpRight className="size-4" />
           </a>
@@ -963,7 +963,11 @@ function Footer() {
               AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
             </p>
 
-            <div className="mt-16 flex items-center justify-center gap-2.5 md:justify-start">
+            <a
+              href="#top"
+              className="mt-16 flex items-center justify-center gap-2.5 md:justify-start"
+              aria-label="Voltar ao topo"
+            >
               <span className="text-sm font-medium text-muted-foreground">Powered by</span>
               <img
                 src={kioAlgoLogo}
@@ -971,7 +975,7 @@ function Footer() {
                 className="h-16 w-auto object-contain"
                 loading="lazy"
               />
-            </div>
+            </a>
           </div>
 
           <div className="text-center md:text-left">
