@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "icon",
         type: "image/png",
-        href: "/faviconK.png",
+        href: "/faviconRAIO.png",
       },
     ],
   }),
