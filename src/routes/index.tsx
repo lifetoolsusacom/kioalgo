@@ -684,7 +684,7 @@ function Pricing() {
 
             <motion.a
               href="#top"
-              className="mt-4 flex h-[50px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white"
+              className="mt-auto flex h-[50px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white"
               animate={{
                 background: accent.button,
                 boxShadow: accent.buttonGlow,
@@ -766,7 +766,7 @@ function Pricing() {
 
             <a
               href="#top"
-              className="mt-4 flex h-[50px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white transition-transform duration-300 hover:scale-[1.01]"
+              className="mt-auto flex h-[50px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white transition-transform duration-300 hover:scale-[1.01]"
               style={{
                 background: "linear-gradient(135deg, #8B2CFF, #B266FF)",
                 boxShadow: "0 0 20px rgba(139,44,255,0.85), 0 12px 40px -8px rgba(139,44,255,0.8)",
