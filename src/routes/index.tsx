@@ -969,12 +969,13 @@ function Footer() {
                 alt="KioAlgo"
                 className="h-5 w-auto object-contain"
                 loading="lazy"
-                />
+              />
               <span className="text-[10px] font-semibold text-muted-foreground">
                 Powered by <span className="font-bold text-foreground">KioAlgo</span>
               </span>
             </div>
-    
+          </div>
+
           <div className="text-center md:text-left">
             <h3 className="text-sm font-bold text-foreground">Navigation</h3>
             <nav className="mt-4 flex flex-col items-center gap-2.5 md:items-start">
