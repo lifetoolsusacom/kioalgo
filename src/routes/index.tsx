@@ -947,21 +947,139 @@ function Footer() {
   );
 }
 
-function Index() {
+function Footer() {
+  const navigation = [
+    ["Why RAPID3?", "#why"],
+    ["Features", "#features"],
+    ["How it works", "#how"],
+    ["Pricing", "#pricing"],
+    ["FAQ", "#faq"],
+  ];
+
+  const socials = [
+    ["YouTube", "#"],
+    ["Instagram", "#"],
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
-      <Nav />
-      <main>
-        <Hero />
-        <Marquee />
-        <Features />
-        <How />
-        <Compare />
-        <Pricing />
-        <Faq />
-        <FinalCta />
-      </main>
-      <Footer />
-    </div>
+    <footer className="border-t border-[#1c2230] bg-[#0a0b10]">
+      <div className="mx-auto max-w-6xl px-5 pt-16 pb-10">
+        <div className="grid gap-12 border-b border-[#1c2230] pb-12 md:grid-cols-[minmax(0,1.5fr)_minmax(0,0.75fr)_minmax(0,0.75fr)]">
+          <div>
+            <a href="#top" className="inline-flex items-center gap-2">
+              <span className="grid size-9 place-items-center rounded-lg bg-primary/15 ring-1 ring-primary/35">
+                <Zap className="size-4 text-green-bright" />
+              </span>
+              <span className="font-display text-2xl font-extrabold tracking-tight text-white">
+                RAPID3™
+              </span>
+            </a>
+
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-[#a0a5b5]">
+              AI-powered trading indicator. Real-time signals, auto TP/SL, zero repaints.
+            </p>
+
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#0066ff]/25 bg-[#0066ff]/10 px-3 py-2">
+              <span className="grid size-5 place-items-center rounded-md bg-[#0066ff]">
+                <span className="size-2 rounded-sm bg-white" />
+              </span>
+              <span className="text-xs font-semibold text-[#c6dcff]">
+                Powered by <span className="font-bold text-white">KioAlgo</span>
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold text-white">Navigation</h3>
+            <nav className="mt-5 flex flex-col items-start gap-3">
+              {navigation.map(([label, href]) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="text-sm text-[#a0a5b5] transition-colors hover:text-[#0066ff]"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold text-white">Socials</h3>
+            <nav className="mt-5 flex flex-col items-start gap-3">
+              {socials.map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="text-sm text-[#a0a5b5] transition-colors hover:text-[#0066ff]"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+
+        <div className="pt-10 text-center">
+          <p className="text-xs text-[#555a68]">
+            © 2026 KioAlgo. All Rights Reserved. · Built for TradingView · Available worldwide
+          </p>
+
+          <div className="mx-auto mt-8 max-w-5xl space-y-4 text-left text-[11px] leading-relaxed text-[#555a68] sm:text-xs">
+            <p>
+              <span className="font-semibold text-[#707788]">Risk Disclaimer:</span> Trading
+              financial instruments — including forex, cryptocurrency, stocks, futures, and indices
+              — carries a significant risk of loss and is not suitable for all investors. The
+              majority of retail traders lose money. You should carefully consider your financial
+              situation, investment objectives, and risk tolerance before engaging in any form of
+              trading activity.
+            </p>
+
+            <p>
+              RAPID3 and its associated tools, signals, educational content, and community resources
+              are provided strictly for informational and educational purposes. Nothing on this
+              website, within the Discord community, or in any communications from the KioAlgo team
+              constitutes financial advice or a recommendation to buy or sell any financial
+              instrument. All content should be considered hypothetical and illustrative in nature,
+              selected to demonstrate the product&apos;s capabilities, and must not be interpreted as
+              a guarantee of future performance or profit.
+            </p>
+
+            <p>
+              Past performance of any signal, strategy, or trading result shown on this platform —
+              including backtested results — does not guarantee similar results in the future.
+              Backtested and simulated results have inherent limitations: they are constructed with
+              the benefit of hindsight and do not reflect real market conditions such as slippage,
+              liquidity constraints, or execution delays.
+            </p>
+
+            <p>
+              Testimonials and results shared by users of RAPID3 reflect individual experiences and
+              are not representative of typical outcomes. Individual results will vary based on
+              market conditions, personal trading decisions, and risk management practices.
+            </p>
+
+            <p>
+              Charts and visual examples on this site are powered by{" "}
+              <a
+                href="https://www.tradingview.com"
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-[#707788] underline decoration-[#0066ff]/40 underline-offset-2 transition-colors hover:text-[#0066ff]"
+              >
+                TradingView®
+              </a>
+              . TradingView® is a registered trademark of TradingView, Inc. RAPID3 is an
+              independent third-party tool built for use within the TradingView platform.
+              TradingView® has no affiliation with KioAlgo or the services described herein.
+            </p>
+
+            <p className="pt-1 text-center text-xs font-semibold text-[#707788]">
+              Always trade responsibly. Never risk capital you cannot afford to lose.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
