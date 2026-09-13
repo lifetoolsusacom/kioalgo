@@ -534,7 +534,7 @@ function Pricing() {
   ];
 
   const lifetimePerks = [
-    "Locked at $439 forever — last Founding Members pricing",
+    "Locked at $549 forever — last Founding Members pricing",
     "All future KioAlgo indicators — free forever",
     "Beta access to every new version first",
     "Direct input on future features",
@@ -693,7 +693,7 @@ function Pricing() {
                         fontFamily: priceFont,
                       }}
                     >
-                      {isAnnual ? "$24.92" : "$49.99"}
+                      {isAnnual ? "$24.92" : "$59.99"}
                     </p>
 
                     <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">
@@ -772,7 +772,7 @@ function Pricing() {
                   fontFamily: priceFont,
                 }}
               >
-                $439
+                $549
               </p>
 
               <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">
@@ -823,7 +823,7 @@ function Pricing() {
             </a>
 
             <p className="mt-2 flex h-[18px] items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
-              ⚠️ Only 1 of 8 Founding spots remaining
+              ⚠️ GET 10% DISCOUNT COUPON: RAPID10 ⚠️
             </p>
           </div>
         </div>
