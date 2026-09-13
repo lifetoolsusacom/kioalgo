@@ -516,8 +516,8 @@ function Compare() {
 }
 
 function Pricing() {
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
-  const isAnnual = billingPeriod === "annual";
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "quarterly">("monthly");
+  const isQuarterly = billingPeriod === "quarterly";
 
   const planFeatures = [
     "Full RAPID3 indicator access",
@@ -534,14 +534,14 @@ function Pricing() {
   ];
 
   const lifetimePerks = [
-    "Locked at $549 forever — last Founding Members pricing",
+    "Locked at $349 forever — last Founding Members pricing",
     "All future KioAlgo indicators — free forever",
     "Beta access to every new version first",
     "Direct input on future features",
     "Founding Member status — forever",
   ];
 
-  const accent = isAnnual
+  const accent = isQuarterly
     ? {
         label: "#FF4040",
         border: "#FF2B2B",
@@ -581,7 +581,7 @@ function Pricing() {
           <span
             className="text-sm font-bold transition-colors duration-300"
             style={{
-              color: isAnnual ? "var(--muted-foreground)" : "var(--foreground)",
+              color: isQuarterly ? "var(--muted-foreground)" : "var(--foreground)",
             }}
           >
             Monthly
@@ -590,14 +590,14 @@ function Pricing() {
           <button
             type="button"
             role="switch"
-            aria-checked={isAnnual}
-            onClick={() => setBillingPeriod(isAnnual ? "monthly" : "annual")}
+            aria-checked={isQuarterly}
+            onClick={() => setBillingPeriod(isQuarterly ? "monthly" : "quarterly")}
             className="relative h-8 w-[60px] shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             style={{
-              backgroundColor: isAnnual
+              backgroundColor: isQuarterly
                 ? "rgba(255, 43, 43, 0.18)"
                 : "rgba(23, 105, 255, 0.18)",
-              boxShadow: isAnnual
+              boxShadow: isQuarterly
                 ? "0 0 18px rgba(255, 43, 43, 0.35), inset 0 0 0 1px rgba(255, 43, 43, 0.4)"
                 : "0 0 18px rgba(23, 105, 255, 0.35), inset 0 0 0 1px rgba(23, 105, 255, 0.4)",
               transition: "background-color 350ms ease-in-out, box-shadow 350ms ease-in-out",
@@ -606,11 +606,11 @@ function Pricing() {
             <motion.span
               className="absolute top-1 left-1 size-6 rounded-full"
               animate={{
-                x: isAnnual ? 28 : 0,
-                background: isAnnual
+                x: isQuarterly ? 28 : 0,
+                background: isQuarterly
                   ? "linear-gradient(135deg, #FF2B2B, #FF6B6B)"
                   : "linear-gradient(135deg, #1769FF, #5B9CFF)",
-                boxShadow: isAnnual
+                boxShadow: isQuarterly
                   ? "0 0 12px rgba(255,43,43,0.7)"
                   : "0 0 12px rgba(23,105,255,0.7)",
               }}
@@ -622,14 +622,14 @@ function Pricing() {
           <span
             className="text-sm font-bold transition-colors duration-300"
             style={{
-              color: isAnnual ? "#FF4040" : "var(--muted-foreground)",
+              color: isQuarterly ? "#FF4040" : "var(--muted-foreground)",
             }}
           >
-            Annual
+            Quarterly
           </span>
 
           <span className="rounded-full bg-green/25 px-3 py-1 text-xs font-bold text-green-bright">
-            SAVE $300
+            SAVE $40
           </span>
         </div>
 
@@ -647,7 +647,7 @@ function Pricing() {
               <div className="flex items-center gap-2 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.span
-                    key={isAnnual ? "annual-label" : "monthly-label"}
+                    key={isQuarterly ? "quarterly-label" : "monthly-label"}
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
@@ -655,12 +655,12 @@ function Pricing() {
                     className="text-xs font-extrabold tracking-widest"
                     style={{ color: accent.label }}
                   >
-                    {isAnnual ? "ANNUAL" : "MONTHLY"}
+                    {isQuarterly ? "QUARTERLY" : "MONTHLY"}
                   </motion.span>
                 </AnimatePresence>
 
                 <AnimatePresence>
-                  {isAnnual && (
+                  {isQuarterly && (
                     <motion.span
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -679,7 +679,7 @@ function Pricing() {
               <div className="relative mt-2.5 min-h-[68px] overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
-                    key={isAnnual ? "annual-price" : "monthly-price"}
+                    key={isQuarterly ? "quarterly-price" : "monthly-price"}
                     initial={{ opacity: 0, y: 8, scale: 0.96 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -8, scale: 0.96 }}
@@ -693,14 +693,14 @@ function Pricing() {
                         fontFamily: priceFont,
                       }}
                     >
-                      {isAnnual ? "$24.92" : "$59.99"}
+                      {isQuarterly ? "$49.99" : "$59.99"}
                     </p>
 
                     <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">
                       /month
-                      {isAnnual && (
+                      {isQuarterly && (
                         <span className="ml-2 font-extrabold text-[#FF6B6B]">
-                          $299 billed annually
+                          $199.99 billed every 4 months
                         </span>
                       )}
                     </p>
@@ -749,16 +749,28 @@ function Pricing() {
             className="relative flex h-full flex-col rounded-[22px] border p-5 backdrop-blur"
             style={{
               backgroundColor: "#0b0a12",
-              borderColor: "#8B2CFF",
-              boxShadow: "0 0 32px -12px rgba(139,44,255,0.4)",
+              borderColor: "#3DDC97",
+              boxShadow: "0 0 32px -12px rgba(61,220,151,0.4)",
             }}
           >
-            <span className="absolute -top-3 left-5 rounded-full bg-[#8B2CFF] px-3 py-1 text-xs font-bold text-white">
+            <span
+              className="absolute -top-3 left-5 rounded-full px-3 py-1 text-xs font-bold text-white"
+              style={{
+                background: "linear-gradient(135deg, #3DDC97, #8B2CFF)",
+              }}
+            >
               BEST VALUE
             </span>
 
             <div className="flex flex-1 flex-col">
-              <p className="text-xs font-extrabold tracking-widest text-[#B98CFF]">LIFETIME</p>
+              <p
+                className="bg-clip-text text-xs font-extrabold tracking-widest text-transparent"
+                style={{
+                  backgroundImage: "linear-gradient(135deg, #3DDC97, #B98CFF)",
+                }}
+              >
+                LIFETIME
+              </p>
 
               <p className="mt-1 text-xs font-bold text-muted-foreground">
                 Own It Forever. No Renewals Ever.
@@ -767,12 +779,12 @@ function Pricing() {
               <p
                 className={`mt-2.5 ${priceClass}`}
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #F3E8FF, #8B2CFF)",
+                  backgroundImage: "linear-gradient(135deg, #3DDC97, #8B2CFF)",
                   WebkitTextStroke: "0.5px rgba(255,255,255,0.15)",
                   fontFamily: priceFont,
                 }}
               >
-                $549
+                $349
               </p>
 
               <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">
@@ -789,7 +801,7 @@ function Pricing() {
                     key={feature}
                     className="flex gap-2 text-[13px] font-bold leading-snug text-foreground/95"
                   >
-                    <Check className="mt-0.5 size-3.5 shrink-0 text-[#B98CFF]" />
+                    <Check className="mt-0.5 size-3.5 shrink-0 text-[#3DDC97]" />
                     {feature}
                   </li>
                 ))}
@@ -814,9 +826,9 @@ function Pricing() {
               href="#top"
               className="mt-auto flex h-[50px] w-full items-center justify-center gap-2 rounded-full text-base font-bold text-white transition-transform duration-300 hover:scale-[1.01]"
               style={{
-                background: "linear-gradient(135deg, #8B2CFF, #B266FF)",
+                background: "linear-gradient(135deg, #3DDC97, #8B2CFF)",
                 boxShadow:
-                  "0 0 20px rgba(139,44,255,0.85), 0 12px 40px -8px rgba(139,44,255,0.8)",
+                  "0 0 20px rgba(139,44,255,0.6), 0 12px 40px -8px rgba(61,220,151,0.6)",
               }}
             >
               Get Lifetime Access <ArrowRight className="size-4" />
