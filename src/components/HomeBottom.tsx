@@ -75,12 +75,12 @@ function Pricing() {
     "All future updates included",
   ];
 
-  const lifetimePerks = [
-    "Locked at $349 forever — last Founding Members pricing",
-    "All future KioAlgo indicators — free forever",
+  const annualPerks = [
+    "Full year of RAPID3 signals & updates",
+    "All future KioAlgo indicators — included for 12 months",
     "Beta access to every new version first",
     "Direct input on future features",
-    "Founding Member status — forever",
+    "Priority support & annual roadmap access",
   ];
 
   const accent = isQuarterly
@@ -167,7 +167,7 @@ function Pricing() {
               color: isQuarterly ? "#FF4040" : "var(--muted-foreground)",
             }}
           >
-            Quarterly
+            Four-Month Access
           </span>
 
           <span className="rounded-full bg-green/25 px-3 py-1 text-xs font-bold text-green-bright">
@@ -197,7 +197,7 @@ function Pricing() {
                     className="text-xs font-extrabold tracking-widest"
                     style={{ color: accent.label }}
                   >
-                    {isQuarterly ? "QUARTERLY" : "MONTHLY"}
+                    {isQuarterly ? "FOUR-MONTH ACCESS" : "MONTHLY"}
                   </motion.span>
                 </AnimatePresence>
 
@@ -311,11 +311,11 @@ function Pricing() {
                   backgroundImage: "linear-gradient(135deg, #3DDC97, #B98CFF)",
                 }}
               >
-                LIFETIME
+                ANNUAL
               </p>
 
               <p className="mt-1 text-xs font-bold text-muted-foreground">
-                Own It Forever. No Renewals Ever.
+                12 Months of Full Access. Renew Yearly.
               </p>
 
               <p
@@ -326,11 +326,11 @@ function Pricing() {
                   fontFamily: priceFont,
                 }}
               >
-                $349
+                $389
               </p>
 
               <p className="mt-0.5 text-sm font-extrabold text-muted-foreground">
-                one-time payment
+                billed annually
               </p>
 
               <p className="mt-3 text-xs font-bold tracking-widest text-muted-foreground">
@@ -351,7 +351,7 @@ function Pricing() {
 
               <div className="mt-3 border-t border-border/60 pt-3">
                 <ul className="space-y-1.5">
-                  {lifetimePerks.map((perk) => (
+                {annualPerks.map((perk) => (
                     <li
                       key={perk}
                       className="flex gap-2 text-[13px] font-bold leading-snug text-foreground/95"
@@ -373,7 +373,7 @@ function Pricing() {
                   "0 0 20px rgba(139,44,255,0.6), 0 12px 40px -8px rgba(61,220,151,0.6)",
               }}
             >
-              Get Lifetime Access <ArrowRight className="size-4" />
+              Get Annual Access <ArrowRight className="size-4" />
             </a>
 
             <p className="mt-2 flex h-[18px] items-center justify-center gap-1.5 text-center text-xs font-bold text-amber-400">
